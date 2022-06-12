@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busco Novia</title>
+</head>
+
+<body style="text-align: center;">
+    <h1>¿Quieres ser mi novia?</h1>
+
+    <div>
+        <button id="btn-si" style="width: 3%;">Si</button>
+        <button id="btn-no" style="position: absolute; width: 3%;">No</button>
+    </div>
+
+    <script>
+        var btnSi = document.getElementById("btn-si");
+        var btnNo = document.getElementById("btn-no");
+        let cont = 0;
+
+        btnSi.addEventListener('click', () => {
+            if (cont >= 5) {
+                alert("Si funcionó el amarre");
+            } else {
+                alert("A ver, dame un beso");
+            }
+        });
+
+        btnNo.addEventListener('mouseover', () => {
+            let left = Math.random() * 97; //97 porque el boton mide 3%
+            let top = Math.random() * 97; //97 porque el boton mide 3%
+
+            btnNo.style.left = left + "%";
+            btnNo.style.top = top + "%";
+
+            if (cont == 5) {
+                alert("Ni modo, toca hacer amarre");
+            }
+
+            cont++;
+        });
+    </script>
+</body>
+
+</html>
